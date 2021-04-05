@@ -4,11 +4,8 @@ Spyder Editor and VS Code Editor
 This is a temporary script file.
 """
 
-import requests,json
+import requests, json
 from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
-from tkinter import simpledialog
 
 api_key = "56b68c7a673ba0a55a2035d3d7c0a2eb"
 
