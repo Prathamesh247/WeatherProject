@@ -59,7 +59,7 @@ def proceed():
             Label(home, text='At. Pressure: ' +str(currentpressure)+ ' hPa').place(x=141,y=90)
             Label(home, text='Humidity: ' +str(currenthumidiy)+ '%').place(x=290,y=90)
             Label(home, text='Description: ' +str(weather_description).capitalize()).place(x=157,y=111)
-        
+
         # Display error popup
         else: 
             return messagebox.showerror('Error','No City Found')
