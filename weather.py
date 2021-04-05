@@ -38,27 +38,27 @@ def proceed():
         
         # Convert json data to pyhton-readable
         # data format in the form of list of nested dictionaries
-        x = response.json()  
+        city = response.json()  
         
         # Proceed if the coordinates are found
         # i.e. the value of key "cod" is not 404
-        if x["cod"] != "404":
+        if city["cod"] != "404":
 
             # Retrieve the current weather conditions
-            y = x["main"] 
-            currenttemp = y["temp"] 
-            currentpressure = y["pressure"] 
-            currenthumidiy = y["humidity"]
+            main = city["main"] 
+            currenttemp = main["temp"] 
+            currentpressure = main["pressure"] 
+            currenthumidiy = main["humidity"]
             
             # Retrieve weather description
-            z = x["weather"] 
-            weather_description = z[0]["description"]
+            weather = city["weather"] 
+            weather_description = weather[0]["description"]
 
             # Display the results
-            Label(home,text='Temperature: '+str(round(currenttemp-272.15))+' C').place(x=21,y=90)
-            Label(home,text='At. Pressure: '+str(currentpressure)+' hPa').place(x=151,y=90)
-            Label(home,text='Humidity: '+str(currenthumidiy)).place(x=300,y=90)
-            Label(home,text='Description: '+str(weather_description)).place(x=157,y=121)
+            Label(home, text='Temperature: ' +str(round(currenttemp-272.15))+ ' C').place(x=11,y=90)
+            Label(home, text='At. Pressure: ' +str(currentpressure)+ ' hPa').place(x=141,y=90)
+            Label(home, text='Humidity: ' +str(currenthumidiy)+ '%').place(x=290,y=90)
+            Label(home, text='Description: ' +str(weather_description).capitalize()).place(x=157,y=111)
         
         # Display error popup
         else: 
@@ -70,9 +70,9 @@ home.geometry('400x400')
 home.title('Weather App 1.2')
 name = StringVar()
 
-Label(home,text='Tkinter Weather',font='Roboto 12 bold').grid(row=1,column=3)
-Label(home,text='Enter City:').grid(row=2,column=1)
-Entry(home,width=15,textvariable=name).grid(row=2,column=2)
-Button(home,text='Proceed',command=proceed).grid(row=3,column=3)
+Label(home, text='Tkinter Weather', font='Roboto 12 bold').grid(row=1,column=3)
+Label(home, text='Enter City:').grid(row=2,column=1)
+Entry(home, width=15, textvariable=name).grid(row=2,column=2)
+Button(home, text='Proceed', command=proceed).grid(row=3,column=3)
 
 home.mainloop()
