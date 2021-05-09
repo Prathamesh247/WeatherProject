@@ -1,0 +1,8 @@
+#Protection for the private API key
+config.py
+
+#Byte-compiled file
+__pycache__/
+
+#OS generated file
+Thumbs.db 
