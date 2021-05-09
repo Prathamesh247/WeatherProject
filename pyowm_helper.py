@@ -3,7 +3,9 @@ from datetime import datetime
 from timezone_conversion import gmt_to_indian
 import config
 
+#Get the API key from config.py
 owm = pyowm.OWM(config.API_KEY)
+#Create a weather manager instance
 mgr = owm.weather_manager()
 
 city = 'Mumbai,India'
@@ -20,8 +22,10 @@ def get_temperature():
     forecast = forecaster.forecast
     
     for weather in forecast:
+        #Set the timezone
         day = gmt_to_indian(weather.reference_time())
         date = day.date()
+        #Fill the list the predicted weather values for next 5 days
         if date not in dates:
             dates.append(date)
             temp_min.append(None)

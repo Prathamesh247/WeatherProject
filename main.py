@@ -9,11 +9,13 @@ degree_sign= u'\N{DEGREE SIGN}'
 def init_plot():
     plt.figure('PyOWM Weather', figsize=(5,4))
     plt.xlabel('Day')
-    plt.ylabel(f'Temperature({degree_sign})F')
+    plt.ylabel(f'Temperature({degree_sign})C')
     plt.title('Weekly Forecast')
 
 def plot_temperatures(days, temp_min, temp_max):
+    #Convert datetime objects to matplotlib date objects
     days = dates.date2num(days)
+    #Two bar charts on the same plot with a little offset
     bar_min = plt.bar(days-0.25, temp_min, width=0.5, color='#4286f4')
     bar_max = plt.bar(days+0.25, temp_max, width=0.5, color='#f4b042')
     return (bar_min, bar_max)
