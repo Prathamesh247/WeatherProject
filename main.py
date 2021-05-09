@@ -21,15 +21,19 @@ def plot_temperatures(days, temp_min, temp_max):
     return (bar_min, bar_max)
 
 def label_xaxis(days):
+    #Use datetime objects to use as labels
     plt.xticks(days)
+    #Formatting
     axes = plt.gca()
     xaxis_format = dates.DateFormatter('%d/%m')
     axes.xaxis.set_major_formatter(xaxis_format)
 
 def write_temperatures_on_bar_chart(bar_min, bar_max):
+    #Adding labels of the value of temperature
     axes = plt.gca()
     y_axis_max = axes.get_ylim()[1]
     label_offset = y_axis_max*0.1
+    #Positioning at the top
     for bar_chart in [bar_min, bar_max]:
         for index, bar in enumerate(bar_chart):
             height = bar.get_height()
