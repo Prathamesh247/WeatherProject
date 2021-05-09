@@ -6,17 +6,17 @@ import config
 owm = pyowm.OWM(config.API_KEY)
 mgr = owm.weather_manager()
 
-city = ''
-country = 'India'
-full_name = city+ ',' +country
+city = 'Mumbai,India'
 
 def get_temperature():
+    # List to store the respective values 
     days = []
     dates = []
     temp_min = []
     temp_max = []
 
-    forecaster = mgr.forecast_at_place(full_name, '3h')
+    #Create a weather manager instance
+    forecaster = mgr.forecast_at_place(city, '3h')
     forecast = forecaster.forecast
     
     for weather in forecast:

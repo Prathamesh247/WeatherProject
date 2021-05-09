@@ -1,9 +1,11 @@
 from matplotlib import pyplot as plt
 from matplotlib import dates
+from tkinter import messagebox
 from pyowm_helper import get_temperature
 
 degree_sign= u'\N{DEGREE SIGN}'
 
+# Create empty window with the given dimensions and labeling
 def init_plot():
     plt.figure('PyOWM Weather', figsize=(5,4))
     plt.xlabel('Day')
@@ -19,7 +21,7 @@ def plot_temperatures(days, temp_min, temp_max):
 def label_xaxis(days):
     plt.xticks(days)
     axes = plt.gca()
-    xaxis_format = dates.DateFormatter('%m/%d')
+    xaxis_format = dates.DateFormatter('%d/%m')
     axes.xaxis.set_major_formatter(xaxis_format)
 
 def write_temperatures_on_bar_chart(bar_min, bar_max):
