@@ -27,11 +27,11 @@ def get_temperature():
             temp_min.append(None)
             temp_max.append(None)
             days.append(date)
-        temperature = weather.temperature('fahrenheit')['temp']
+        temperature = weather.temperature('kelvin')['temp']
         if not temp_min[-1] or temperature<temp_min[-1]:
-            temp_min[-1] = temperature
+            temp_min[-1] = float(temperature)-272.15
         if not temp_max[-1] or temperature>temp_min[-1]:
-            temp_max[-1] = temperature
+            temp_max[-1] = float(temperature)-272.15
     
     return(days, temp_min, temp_max)
 
