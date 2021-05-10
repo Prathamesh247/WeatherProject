@@ -26,5 +26,3 @@ Make sure to create a config.py file locally to store "your own" API key.
 
 To use the 1st part, run the weather.py file
 To use the 2nd part, run the chart.py
-
-The trial folder contains results of previous attempts to add new features.
