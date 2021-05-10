@@ -6,3 +6,7 @@ __pycache__/
 
 #OS generated file
 Thumbs.db
+
+#Reports
+*.pdf
+*.zip
