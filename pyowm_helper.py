@@ -8,7 +8,7 @@ owm = pyowm.OWM(config.API_KEY)
 #Create a weather manager instance
 mgr = owm.weather_manager()
 
-city = 'Mumbai,India'
+city = 'Mumbai, India'
 
 def get_temperature():
     # List to store the respective values 

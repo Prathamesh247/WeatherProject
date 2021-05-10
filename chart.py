@@ -1,7 +1,6 @@
 from matplotlib import pyplot as plt
 from matplotlib import dates
-from tkinter import messagebox
-from pyowm_helper import get_temperature
+import pyowm_helper
 
 degree_sign= u'\N{DEGREE SIGN}'
 
@@ -10,7 +9,7 @@ def init_plot():
     plt.figure('PyOWM Weather', figsize=(5,4))
     plt.xlabel('Day')
     plt.ylabel(f'Temperature({degree_sign})C')
-    plt.title('Weekly Forecast')
+    plt.title(pyowm_helper.city+ ' Weekly Forecast')
 
 def plot_temperatures(days, temp_min, temp_max):
     #Convert datetime objects to matplotlib date objects
@@ -44,7 +43,7 @@ def write_temperatures_on_bar_chart(bar_min, bar_max):
 
 if __name__ == '__main__':
     init_plot()
-    days, temp_min, temp_max = get_temperature()
+    days, temp_min, temp_max = pyowm_helper.get_temperature()
     bar_min, bar_max = plot_temperatures(days, temp_min, temp_max)
     label_xaxis(days)
     write_temperatures_on_bar_chart(bar_min, bar_max)
