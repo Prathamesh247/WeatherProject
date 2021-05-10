@@ -14,6 +14,9 @@ The second part of the project gives a combined bar chart of the minimum and max
 temperatures for the current day and the next 5 days with the use of 
 Matplotlib, Datetime, Pytz and PyOWM modules.
 
+alltimezones.py enlists all available from pytz module
+in the timezones.txt file. Run this to check the timezone of your desired city for the chart.
+
 Steps to get the OpenWeatherMap API key:
 1) Go to https://openweathermap.org/
 2) Sign up using either email or other social credentials
