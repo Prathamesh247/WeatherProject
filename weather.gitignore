@@ -5,4 +5,8 @@ config.py
 __pycache__/
 
 #OS generated file
-Thumbs.db 
+Thumbs.db
+
+#Reports
+.pdf
+.zip
